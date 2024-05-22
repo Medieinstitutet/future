@@ -14,9 +14,9 @@ export const createTransaction = (req, res) => {
 
 export const broadcastTransaction = (req, res) => {
   const transaction = blockchain.createTransaction(
-    req.body.amount,
-    req.body.sender,
-    req.body.recipient
+    req.body.sum,
+    req.body.payer,
+    req.body.payee
   );
 
   const blockIndex = blockchain.addTransaction(transaction);
