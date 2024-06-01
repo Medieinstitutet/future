@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import useAxios from '../hooks/useAxios';
 
+import GetAccounts from '../components/getAccounts';
 const TransferFunds = () => {
   const [fromAddress, setFromAddress] = useState('');
   const [toAddress, setToAddress] = useState('');
@@ -9,6 +10,10 @@ const TransferFunds = () => {
 
   const handleTransferFunds = async () => {
     await fetchData('http://localhost:5001/api/v1/crypto/transfer', 'POST', {}, { fromAddress, toAddress, amount: Number(amount) });
+    setFromAddress('')
+    setToAddress('');
+    setAmount('');
+ 
   };
 
   return (
@@ -37,6 +42,7 @@ const TransferFunds = () => {
       </button>
       {error && <p>{error.message || 'An error occurred'}</p>}
       {response && <p>{response.data?.message || 'Transfer successful'}</p>}
+   <GetAccounts/>
     </div>
   );
 };

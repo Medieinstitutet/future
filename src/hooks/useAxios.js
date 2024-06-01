@@ -16,6 +16,7 @@ const useAxios = () => {
     async (url, method = 'GET', headers = {}, data = {}, params = {}) => {
       setLoading(true);
       setError('');
+      setResponse(null);
 
       try {
         const result = await axiosInstance({

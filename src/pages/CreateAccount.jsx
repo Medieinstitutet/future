@@ -9,6 +9,7 @@ const CreateAccount = () => {
 
   const handleCreateAccount = async () => {
     await fetchData('http://localhost:5001/api/v1/crypto/create-account', 'POST', {}, { address });
+  setAddress('')
   };
 
   useEffect(() => {

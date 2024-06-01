@@ -39,7 +39,10 @@ export const transferFunds = (req, res) => {
 };
 export const getAccounts = (req, res) => {
   try {
-    const accounts = Array.from(blockchain.cryptoCurrency.accounts.keys());
+    const accounts = Array.from(blockchain.cryptoCurrency.accounts.entries()).map(([address, balance]) => ({
+      address,
+      balance,
+    }));
     res.status(200).json({ success: true, data: accounts });
   } catch (error) {
     res.status(400).json({ success: false, error: error.message });
