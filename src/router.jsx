@@ -8,11 +8,16 @@ import AddFunds from './pages/AddFunds';
 import TransferFunds from './pages/TransferFunds';
 import GetBalance from './pages/GetBalance';
 import NotFound from './pages/NotFound';
+import Transactions from './pages/Transactions';
 
 export const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<Layout />}>
       <Route index element={<Home />} />
+
+      <Route path="accounts-management" element={<AccountsManagement />}>
+      <Route path="add-funds" element={<Transactions />} />
+        </Route>
       <Route path="accounts-management" element={<AccountsManagement />}>
         <Route path="create-account" element={<CreateAccount />} />
         <Route path="add-funds" element={<AddFunds />} />

@@ -3,7 +3,7 @@ import FileHandler from "../utilities/filehandler.mjs";
 export default class CryptoCurrency {
   constructor(folder, filename) {
     this.fileHandler = new FileHandler(folder, filename);
-    this.accounts = new Map(this.fileHandler.read(true)); // Load existing accounts from file
+    this.accounts = new Map(this.fileHandler.read(true));
   }
 
   saveAccounts() {

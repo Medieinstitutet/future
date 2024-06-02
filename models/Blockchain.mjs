@@ -43,12 +43,13 @@ export default class Blockchain {
     return block;
   }
 
-  createTransaction(amount, sender, recipient) {
-    return new Transaction(amount, sender, recipient);
+  createTransaction(amount, sender, recipient, ticketID, firstName, lastName, email) {
+    return new Transaction(amount, sender, recipient, ticketID, firstName, lastName, email, this.cryptoCurrency);
   }
 
   addTransaction(transaction) {
     this.pendingTransactions.push(transaction);
+    this.cryptoCurrency.transferFunds(transaction.sender, transaction.recipient, transaction.amount); 
     return this.getLastBlock().blockIndex + 1;
   }
 

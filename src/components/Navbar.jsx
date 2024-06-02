@@ -14,6 +14,11 @@ export const Navbar = () => {
           </NavLink>
         </li>
         <li>
+          <NavLink to="/transactions" style={linkState}>
+            Transactions
+          </NavLink>
+        </li>
+        <li>
           <NavLink to="/accounts-management" style={linkState}>
             Accounts Management
           </NavLink>
