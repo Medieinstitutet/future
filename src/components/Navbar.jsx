@@ -38,6 +38,11 @@ export const Navbar = () => {
                 Get Balance
               </NavLink>
             </li>
+            <li>
+              <NavLink to="memberlist" style={linkState}>
+                Member List
+              </NavLink>
+              </li>
           </ul>
         </li>
       </ul>
