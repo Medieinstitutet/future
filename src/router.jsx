@@ -6,44 +6,24 @@ import {
 import Layout from './pages/Layout';
 import Home from './pages/Home';
 import AccountsManagement from './pages/AccountsManagement';
-
 import CreateAccount from './pages/CreateAccount';
 import AddFunds from './pages/AddFunds';
 import TransferFunds from './pages/TransferFunds';
 import GetBalance from './pages/GetBalance';
 import NotFound from './pages/NotFound';
 import Blockchain from './pages/Blocks';
+import MemberList from './pages/MemberList';
 
 export const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route
-      path="/"
-      element={<Layout />}
-    >
-      <Route
-        index
-        element={<Home />}
-      />
-      <Route
-        path="accounts-management"
-        element={<AccountsManagement />}
-      >
-        <Route
-          path="create-account"
-          element={<CreateAccount />}
-        />
-        <Route
-          path="add-funds"
-          element={<AddFunds />}
-        />
-        <Route
-          path="transfer-funds"
-          element={<TransferFunds />}
-        />
-        <Route
-          path="get-balance"
-          element={<GetBalance />}
-        />
+    <Route path="/" element={<Layout />}>
+      <Route index element={<Home />} />
+      <Route path="accounts-management" element={<AccountsManagement />}>
+        <Route path="create-account" element={<CreateAccount />} />
+        <Route path="add-funds" element={<AddFunds />} />
+        <Route path="transfer-funds" element={<TransferFunds />} />
+        <Route path="get-balance" element={<GetBalance />} />
+        <Route path="memberlist" element={<MemberList />} />
       </Route>
       <Route
         path="blocks"
