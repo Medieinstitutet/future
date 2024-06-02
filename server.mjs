@@ -8,12 +8,10 @@ import blockchainRouter from './routes/blockchain-routes.mjs';
 
 import { fileURLToPath } from 'url';
 import ErrorResponse from './utilities/errorResponseModel.mjs';
-// import blockchainRouter from "./routes/blockchain-routes.mjs";
 import transactionRouter from './routes/transaction-routes.mjs';
 import cryptoRouter from './routes/crypto-routes.mjs';
 
-// import memberRouter from "./routes/member-routes.mjs";
-
+import memberRouter from './routes/member-routes.mjs';
 
 dotenv.config({ path: './config/config.env' });
 
@@ -25,14 +23,13 @@ const dirname = path.dirname(filename);
 
 global.__appdir = dirname;
 
-
 // Middleware...
 app.use(cors());
 app.use(express.json());
 app.use('/api/v1/blockchain', blockchainRouter);
 app.use('/api/v1/transactions', transactionRouter);
 app.use('/api/v1/crypto', cryptoRouter);
-// app.use("/api/v1/members", memberRouter);
+app.use('/api/v1/members', memberRouter);
 
 if (process.env.NODE_ENV === 'development') {
   app.use(logger);
@@ -42,9 +39,9 @@ console.log(`API base URL: ${BASE_URL}/api/v1`);
 app.all('*', (req, res, next) => {
   next(new ErrorResponse(`Kunde inte hitta resursen ${req.originalUrl}`, 404));
 });
-app.get('*',(req,res)=>{
-  res.sendFile( path.join(dirname,"./client/index.html"))
-})
+app.get('*', (req, res) => {
+  res.sendFile(path.join(dirname, './client/index.html'));
+});
 
 // Central felhantering...
 app.use(errorHandler);

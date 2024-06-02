@@ -6,18 +6,17 @@ const Blockchain = () => {
   const [blocks, setBlocks] = useState([]);
 
   const handleFetchBlockchain = async () => {
-    await fetchData(`${process.env.REACT_APP_API_BASE_URL}/blockchain`, 'GET');
+    await fetchData('http://localhost:5001/api/v1/blockchain', 'GET');
   };
 
   const handleMineBlock = async () => {
-    await fetchData(`${process.env.REACT_APP_API_BASE_URL}/mine-block`, 'POST');
-    handleFetchBlockchain();
+    await fetchData('http://localhost:5001/api/v1/blockchain/mine', 'POST', {});
   };
 
-  // Update the blocks state when response changes
   React.useEffect(() => {
     if (response) {
-      setBlocks(response.data.blockchain.chain);
+      console.log('Response Received: ', response);
+      setBlocks(response.blockchain || []);
     }
   }, [response]);
 
@@ -43,7 +42,7 @@ const Blockchain = () => {
           ))}
         </ul>
       ) : (
-        <p>No blocks found</p>
+        <p>blocks</p>
       )}
     </div>
   );
