@@ -1,13 +1,17 @@
-import { createBrowserRouter, createRoutesFromElements, Route } from 'react-router-dom';
+import {
+  createBrowserRouter,
+  createRoutesFromElements,
+  Route,
+} from 'react-router-dom';
 import Layout from './pages/Layout';
 import Home from './pages/Home';
 import AccountsManagement from './pages/AccountsManagement';
-
 import CreateAccount from './pages/CreateAccount';
 import AddFunds from './pages/AddFunds';
 import TransferFunds from './pages/TransferFunds';
 import GetBalance from './pages/GetBalance';
-import NotFound from './pages/NotFound';'
+import NotFound from './pages/NotFound';
+import Blockchain from './pages/Blocks';
 import MemberList from './pages/MemberList';
 
 export const router = createBrowserRouter(
@@ -21,7 +25,14 @@ export const router = createBrowserRouter(
         <Route path="get-balance" element={<GetBalance />} />
         <Route path="memberlist" element={<MemberList />} />
       </Route>
-      <Route path="*" element={<NotFound />} />
+      <Route
+        path="blocks"
+        element={<Blockchain />}
+      />
+      <Route
+        path="*"
+        element={<NotFound />}
+      />
     </Route>
   )
 );
@@ -32,7 +43,6 @@ export const router = createBrowserRouter(
 // import  Layout  from './pages/Layout';
 // import NotFound  from './pages/NotFound';
 // import CreateNewAccount from './pages/CreateNewAccount';
-
 
 // console.log("Router Configuration Loaded");
 
@@ -61,5 +71,3 @@ export const router = createBrowserRouter(
 //     ],
 //   },
 // ]);
-
-
