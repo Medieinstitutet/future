@@ -1,4 +1,8 @@
-import { createBrowserRouter, createRoutesFromElements, Route } from 'react-router-dom';
+import {
+  createBrowserRouter,
+  createRoutesFromElements,
+  Route,
+} from 'react-router-dom';
 import Layout from './pages/Layout';
 import Home from './pages/Home';
 import AccountsManagement from './pages/AccountsManagement';
@@ -8,18 +12,47 @@ import AddFunds from './pages/AddFunds';
 import TransferFunds from './pages/TransferFunds';
 import GetBalance from './pages/GetBalance';
 import NotFound from './pages/NotFound';
+import Blockchain from './pages/Blocks';
 
 export const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path="/" element={<Layout />}>
-      <Route index element={<Home />} />
-      <Route path="accounts-management" element={<AccountsManagement />}>
-        <Route path="create-account" element={<CreateAccount />} />
-        <Route path="add-funds" element={<AddFunds />} />
-        <Route path="transfer-funds" element={<TransferFunds />} />
-        <Route path="get-balance" element={<GetBalance />} />
+    <Route
+      path="/"
+      element={<Layout />}
+    >
+      <Route
+        index
+        element={<Home />}
+      />
+      <Route
+        path="accounts-management"
+        element={<AccountsManagement />}
+      >
+        <Route
+          path="create-account"
+          element={<CreateAccount />}
+        />
+        <Route
+          path="add-funds"
+          element={<AddFunds />}
+        />
+        <Route
+          path="transfer-funds"
+          element={<TransferFunds />}
+        />
+        <Route
+          path="get-balance"
+          element={<GetBalance />}
+        />
       </Route>
-      <Route path="*" element={<NotFound />} />
+      <Route
+        path="blocks"
+        element={<Blockchain />}
+      />
+      <Route
+        path="*"
+        element={<NotFound />}
+      />
     </Route>
   )
 );
@@ -30,7 +63,6 @@ export const router = createBrowserRouter(
 // import  Layout  from './pages/Layout';
 // import NotFound  from './pages/NotFound';
 // import CreateNewAccount from './pages/CreateNewAccount';
-
 
 // console.log("Router Configuration Loaded");
 
@@ -59,5 +91,3 @@ export const router = createBrowserRouter(
 //     ],
 //   },
 // ]);
-
-
