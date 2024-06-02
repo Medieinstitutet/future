@@ -1,13 +1,13 @@
 import { appendFileSync, readFileSync, writeFileSync, existsSync } from 'fs';
-import { fileURLToPath } from 'url';
-import { dirname, join as joinPath } from 'path';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
+import { join as joinPath } from 'path';
+
+// const __filename = fileURLToPath(import.meta.url);
+// const __dirname = dirname(__filename);
 
 class FileHandler {
   constructor(folder, filename) {
-    this.pathname = joinPath(__dirname, '..', folder, filename); // Adjusted to navigate one directory up
+    this.pathname = joinPath(__appdir, folder, filename);
     this.ensureFileExists();
   }
 
