@@ -7,7 +7,8 @@ import CreateAccount from './pages/CreateAccount';
 import AddFunds from './pages/AddFunds';
 import TransferFunds from './pages/TransferFunds';
 import GetBalance from './pages/GetBalance';
-import NotFound from './pages/NotFound';
+import NotFound from './pages/NotFound';'
+import MemberList from './pages/MemberList';
 
 export const router = createBrowserRouter(
   createRoutesFromElements(
@@ -18,6 +19,7 @@ export const router = createBrowserRouter(
         <Route path="add-funds" element={<AddFunds />} />
         <Route path="transfer-funds" element={<TransferFunds />} />
         <Route path="get-balance" element={<GetBalance />} />
+        <Route path="memberlist" element={<MemberList />} />
       </Route>
       <Route path="*" element={<NotFound />} />
     </Route>
