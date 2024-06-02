@@ -1,14 +1,16 @@
-import FileHandler from "../utilities/filehandler.mjs";
+import FileHandler from '../utilities/filehandler.mjs';
 
 export default class CryptoCurrency {
   constructor(folder, filename) {
     this.fileHandler = new FileHandler(folder, filename);
-    this.accounts = new Map(this.fileHandler.read(true));
+    const data = this.fileHandler.read(true);
+    console.log('Loaded Accounts Data:', data);
+    this.accounts = new Map(data.accounts || []);
   }
 
   saveAccounts() {
-    // Convert map to array and then to JSON to save
-    this.fileHandler.write(Array.from(this.accounts.entries()));
+    const data = { accounts: Array.from(this.accounts.entries()) };
+    this.fileHandler.write(data);
   }
 
   createAccount(address) {

@@ -3,15 +3,20 @@ import useAxios from '../hooks/useAxios';
 
 const GetAccounts = ({ setAccounts }) => {
   const [localAccounts, setLocalAccounts] = useState([]);
-  const { response, error, loading, fetchData } = useAxios();
+  // // // const { response, error, loading, fetchData, } = useAxios();
+  const { response, error, loading, fetchData,enableFetching,disableFetching } = useAxios();
 
   useEffect(() => {
     const fetchAccounts = async () => {
+      enableFetching();
       await fetchData('http://localhost:5001/api/v1/crypto/accounts', 'GET' );
     };
+    
+    disableFetching();
+ fetchAccounts();
 
-    fetchAccounts();
-  }, [fetchData]);
+  }, [fetchData, enableFetching,disableFetching]);
+  // // }, [fetchData,disableFetching,enableFetching]);
 
   useEffect(() => {
     if (response && response.data) {

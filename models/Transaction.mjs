@@ -1,9 +1,9 @@
 import { v4 as uuid4 } from 'uuid';
 export default class Transaction {
-  constructor(sum, payer, payee, ticketID, firstName, lastName, email) {
-    this.sum = sum;
-    this.payer = payer;
-    this.payee = payee;
+  constructor(amount, sender, recipient, ticketID, firstName, lastName, email) {
+    this.amount = amount;
+    this.sender = sender;
+    this.recipient = recipient;
     this.ticketID = ticketID;
     this.firstName = firstName;
     this.lastName = lastName;
@@ -12,6 +12,6 @@ export default class Transaction {
   }
   
   executeTransaction(cryptoCurrency) {
-    cryptoCurrency.transferPayment(this.payer, this.payee, this.sum, this.ticketID, this.firstName, this.lastName, this.email);
+    cryptoCurrency.transferPayment(this.sender, this.recipient, this.amount, this.ticketID, this.firstName, this.lastName, this.email);
   }
 }
