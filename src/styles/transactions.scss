@@ -1,0 +1,93 @@
+// Variables
+$primary-color: #4CAF50;
+$secondary-color: #f9f9f9;
+$font-color: #333;
+
+// Mixin for box-shadow
+@mixin box-shadow($shadow...) {
+  box-shadow: $shadow;
+}
+
+// Style for the form container
+.form-container {
+  background-color: $secondary-color;
+  padding: 20px;
+  border-radius: 8px;
+  @include box-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+  max-width: 400px;
+  margin: 20px auto;
+
+  h2 {
+    color: $primary-color;
+    text-align: center;
+  }
+
+  input, button {
+    display: block;
+    width: calc(100% - 20px);
+    margin: 10px auto;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+
+  input:focus, button:focus {
+    outline: none;
+    border-color: $primary-color;
+  }
+
+  button {
+    background-color: $primary-color;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: darken($primary-color, 10%);
+    }
+  }
+
+  .error {
+    color: red;
+    text-align: center;
+  }
+
+  .message {
+    color: $primary-color;
+    text-align: center;
+  }
+}
+
+// Style for the pending transactions list
+.pending-transactions {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: $secondary-color;
+  border-radius: 8px;
+  @include box-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+
+  h2 {
+    color: $primary-color;
+    text-align: center;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+
+    li {
+      background-color: white;
+      margin: 10px 0;
+      padding: 15px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+
+      p {
+        margin: 5px 0;
+        color: $font-color;
+      }
+    }
+  }
+}

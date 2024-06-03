@@ -21,6 +21,7 @@ const AddFunds = () => {
     if (getAccountsRef.current) {
       getAccountsRef.current.fetchAccounts();
     }
+    alert(response.message ||'Funds Addedsuccessfully!');
   };
 
   return (

@@ -6,7 +6,9 @@ export const Navbar = () => {
   });
 
   return (
-    <nav>
+    <nav className="navbar">
+        <div className="navbar-brand">Tickets Swab</div>
+      <div className="navbar-links">
       <ul>
         <li>
           <NavLink
@@ -21,16 +23,25 @@ export const Navbar = () => {
             Transactions
           </NavLink>
         </li>
-        <li>
-          <NavLink to="/transactions" style={linkState}>
-            Transactions
-          </NavLink>
-        </li>
+
         <li>
           <NavLink
             to="/accounts-management"
             style={linkState}
           >
+        <li>
+          <NavLink
+            to="blocks"
+            style={linkState}
+          >
+            Get Blocks
+          </NavLink>
+        </li>
+        <li>
+        <NavLink to="memberlist" style={linkState}>
+                Member List
+              </NavLink>
+        </li>
             Accounts Management
           </NavLink>
           <ul>
@@ -66,22 +77,11 @@ export const Navbar = () => {
                 Get Balance
               </NavLink>
             </li>
-            <li>
-              <NavLink to="memberlist" style={linkState}>
-                Member List
-              </NavLink>
-              </li>
+
           </ul>
         </li>
-        <li>
-          <NavLink
-            to="blocks"
-            style={linkState}
-          >
-            Get Blocks
-          </NavLink>
-        </li>
       </ul>
+    </div>
     </nav>
   );
 };

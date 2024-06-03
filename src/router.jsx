@@ -24,18 +24,20 @@ export const router = createBrowserRouter(
       <Route path="create-transaction" element={<CreateTransaction />} />
       <Route path="broadcast-transaction" element={<AddFunds />} />
       </Route>
+      <Route
+        path="blocks"
+        element={<Blockchain />}
+      />
 
+        <Route path="memberlist" element={<MemberList />} />
+     
       <Route path="accounts-management" element={<AccountsManagement />}>
         <Route path="create-account" element={<CreateAccount />} />
         <Route path="add-funds" element={<AddFunds />} />
         <Route path="transfer-funds" element={<TransferFunds />} />
         <Route path="get-balance" element={<GetBalance />} />
-        <Route path="memberlist" element={<MemberList />} />
       </Route>
-      <Route
-        path="blocks"
-        element={<Blockchain />}
-      />
+      
       <Route
         path="*"
         element={<NotFound />}

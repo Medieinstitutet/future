@@ -30,6 +30,7 @@ const CreateAccount = () => {
           setAddress(e.target.value);
         }}
         placeholder="Enter address"
+        required
       />
       <button
         onClick={handleCreateAccount}

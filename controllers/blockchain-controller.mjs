@@ -125,5 +125,22 @@ const synchronizeChain = (req, res, next) => {
     })
   );
 };
+ const getPendingTransactions = (req, res) => {
+    try {
+      const pendingTransactions = blockchain.pendingTransactions;
+      res.status(200).json({
+        success: true,
+        data: {
+          pendingTransactions,
+        },
+      });
+    } catch (error) {
+      res.status(500).json({
+        success: false,
+        error: error.message,
+      });
+    }
+  };
 
-export { mineBlock, getBlockchain, synchronizeChain, updateChain };
+
+export { mineBlock, getBlockchain, synchronizeChain, updateChain, getPendingTransactions,};

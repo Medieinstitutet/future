@@ -1,146 +1,115 @@
-// @use "./global.scss";
+// Variables
+$primary-color: #4CAF50;
+$secondary-color: #f9f9f9;
+$font-color: #333;
+$navbar-height: 60px;
+$padding: 20px;
 
-// #root {
-//     display: flex;
-//     flex-direction: column;
-//     gap: 2rem;
+// Mixin for box-shadow
+@mixin box-shadow($shadow...) {
+  box-shadow: $shadow;
+}
 
-//     header {
-//         position: relative;
+// Global styles
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  color: $font-color;
+}
 
-//         @include global.small-screen {
-//             background: linear-gradient(300deg, #ff723bf1, #ffb247f3);
-//             padding: 20px 30px;
-//             border-radius: 25px;
-//         }
+// Navbar styles
+.navbar {
+    width: 100em;
+  display: flex;
+  justify-content: space-between;
+  align-items:flex-start;
+  background-color: $primary-color;
+  color: white;
+  padding: 0 $padding;
+  height: $navbar-height;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-decoration: none;
 
-//         @include global.medium-to-large-screen {
-//             display: flex;
-//             justify-content: space-between;
-//             align-items: center;
-//             height: 12dvh;
-//         }
+  .navbar-brand {
+    font-size: 1.5em;
+    font-weight: bold;
+  }
 
-//         @include global.large-screen {
-//             &::before {
-//                 content: "";
-//                 position: absolute;
-//                 top: -280vh;
-//                 right: -49vw;
-//                 width: 110vw;
-//                 height: 300vh;
-//                 background-image: repeating-radial-gradient(
-//                         circle at 0 0,
-//                         transparent 0,
-//                         #ffb347 100%
-//                     ),
-//                     repeating-linear-gradient(#ff723b, #ff723b);
-//                 background-color: #ffb347;
-//                 border-radius: 50%;
-//                 z-index: -1;
-//                 transition: all 0.5s ease;
-//             }
-//         }
+  .navbar-links {
+    display: flex;
 
-//         @include global.medium-screen {
-//             &::before {
-//                 content: "";
-//                 position: absolute;
-//                 top: -280vh;
-//                 right: -43vw;
-//                 width: 110vw;
-//                 height: 300vh;
-//                 background-image: repeating-radial-gradient(
-//                         circle at 0 0,
-//                         transparent 0,
-//                         #ffb347 100%
-//                     ),
-//                     repeating-linear-gradient(#ff723b, #ff723b);
-//                 background-color: #ffb347;
-//                 border-radius: 50%;
-//                 z-index: -1;
-//                 transition: all 0.5s ease;
-//             }
-//         }
+    gap: 15px;
 
-//         nav {
-//             @include global.small-screen {
-//                 margin-top: 8%;
-//             }
-//             height: 100%;
+    a {
+      color: black;
+      text-decoration: none;
+      transition: color 0.3s;
 
-//             ul {
-//                 @include global.small-screen {
-//                     flex-wrap: wrap;
-//                 }
-//                 display: flex;
-//                 list-style-type: none;
-//                 padding: 0;
-//                 margin: 0;
-//                 gap: 1.5rem;
-//                 height: 100%;
-//                 align-items: center;
-//                 justify-content: center;
+      &:hover {
+        color: darken(rgb(52, 39, 39), 10%);
+      }
+    }
+  }
+}
 
-//                 li > a {
-//                     color: global.$primaryColor2;
-//                     font-weight: 700;
-//                     font-size: global.$s + 0.1rem;
-//                     text-transform: uppercase;
-//                     letter-spacing: 1px;
-//                     text-decoration: underline;
-//                     text-decoration-thickness: 3px;
-//                     text-decoration-color: #00000023;
-//                     text-underline-offset: 5px;
-//                     transition-duration: 0.2s;
+// Main layout styles
+main {
+  display: flex;
+  justify-content: center;
+  padding: $padding;
+  margin-top: $navbar-height; // To prevent overlap with the navbar
 
-//                     &:hover {
-//                         text-decoration-color: global.$primaryColor2;
-//                     }
-//                 }
-//             }
-//         }
-//     }
-// }
+  .main-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+  }
+}
 
-// @include global.small-screen {
-//     details {
-//         summary {
-//             display: grid;
-//             position: relative;
-//             grid-template-columns: 4fr 1fr;
-//             align-items: center;
-//             list-style: none;
-//         }
+// Form and pending transactions styles
+.form-container,
+.pending-transactions {
+  background-color: $secondary-color;
+  padding: $padding;
+  border-radius: 8px;
+  @include box-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+  max-width: 400px;
+  width: 100%;
 
-//         summary > .logo {
-//             width: 190px;
-//             height: auto;
-//         }
+  h2 {
+    color: $primary-color;
+    text-align: center;
+  }
 
-//         summary::-webkit-details-marker {
-//             display: none;
-//         }
+  input, button {
+    display: block;
+    width: calc(100% - 20px);
+    margin: 10px auto;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+  }
 
-//         summary::after {
-//             content: url("/menu.svg");
-//             position: absolute;
-//             font-size: global.$m;
-//             justify-self: end;
-//             top: 7px;
-//         }
-//     }
+  input:focus, button
+  :focus {
+    outline: none;
+    border-color: $primary-color;
+  }
 
-//     details[open] {
-//         summary::after {
-//             content: url("/close.svg");
-//             font-size: global.$m;
-//             justify-self: end;
-//         }
-//     }
-// }
+  button {
+    background-color: $primary-color;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
 
-// main {
-//     min-height: calc(100dvh - 12dvh - 4rem);
-// }
-
+    &:hover {
+      background-color: darken($primary-color, 10%);
+    }
+  }
+}

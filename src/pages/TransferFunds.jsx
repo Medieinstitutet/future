@@ -24,18 +24,21 @@ const TransferFunds = () => {
         value={fromAddress}
         onChange={(e) => setFromAddress(e.target.value)}
         placeholder="From address"
+        required
       />
       <input
         type="text"
         value={toAddress}
         onChange={(e) => setToAddress(e.target.value)}
         placeholder="To address"
+        required
       />
       <input
         type="number"
         value={amount}
         onChange={(e) => setAmount(e.target.value)}
         placeholder="Amount"
+        required
       />
       <button onClick={handleTransferFunds} disabled={loading}>
         {loading ? 'Transferring...' : 'Transfer Funds'}
