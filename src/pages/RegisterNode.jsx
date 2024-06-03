@@ -7,7 +7,7 @@ const RegisterNode = () => {
   const [message, setMessage] = useState('');
 
   const handleRegister = () => {
-    axios.post('/api/members/register-node', { nodeUrl })
+    axios.post('http://localhost:5001/api/members/register-node', { nodeUrl })
       .then(response => {
         setMessage(response.data.data.message);
       })
