@@ -38,7 +38,14 @@ const useAxios = () => {
 
   const enableFetching = () => setShouldFetch(true);
   const disableFetching = () => setShouldFetch(false);
-  return { response, error, loading, fetchData, enableFetching,disableFetching };
+  return {
+    response,
+    error,
+    loading,
+    fetchData,
+    enableFetching,
+    disableFetching,
+  };
 };
 
 export default useAxios;

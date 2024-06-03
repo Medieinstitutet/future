@@ -8,37 +8,239 @@
       "data": [],
       "nonce": 2048,
       "difficulty": 1
-    }
-  ],
-  "pendingTransactions": [
-    {
-      "amount": 10,
-      "sender": "Joakim",
-      "recipient": "Elena",
-      "ticketID": "123",
-      "firstName": "el",
-      "lastName": "kj",
-      "email": "jkbhhvgghc",
-      "transactionId": "9d64282fd2c44f7a96d16a8cb35ba054"
     },
     {
-      "amount": 50,
-      "sender": "Joakim",
-      "recipient": "Elena",
-      "ticketID": "123",
-      "firstName": "ä-ö.l,mknjh",
-      "lastName": ",lmkhnj",
-      "email": "mklhnjbg"
+      "timestamp": 1717445849602,
+      "blockIndex": 2,
+      "previousBlockHash": "0",
+      "currentBlockHash": "00eb6bd01eae26073c70b227fa4519af134b14dc9f008dfba32daba682b66f08",
+      "data": [
+        {
+          "amount": 10,
+          "sender": "Joakim",
+          "recipient": "Elena",
+          "ticketID": "123",
+          "firstName": "el",
+          "lastName": "kj",
+          "email": "jkbhhvgghc",
+          "transactionId": "9d64282fd2c44f7a96d16a8cb35ba054"
+        },
+        {
+          "amount": 50,
+          "sender": "Joakim",
+          "recipient": "Elena",
+          "ticketID": "123",
+          "firstName": "ä-ö.l,mknjh",
+          "lastName": ",lmkhnj",
+          "email": "mklhnjbg"
+        },
+        {
+          "amount": 50,
+          "sender": "Joakim",
+          "recipient": "Elena",
+          "ticketID": "123",
+          "firstName": "ä-ö.l,mknjh",
+          "lastName": ",lmkhnj",
+          "email": "mklhnjbg"
+        }
+      ],
+      "nonce": 301,
+      "difficulty": 2
     },
     {
-      "amount": 50,
-      "sender": "Joakim",
-      "recipient": "Elena",
-      "ticketID": "123",
-      "firstName": "ä-ö.l,mknjh",
-      "lastName": ",lmkhnj",
-      "email": "mklhnjbg"
+      "timestamp": 1717446376786,
+      "blockIndex": 3,
+      "previousBlockHash": "00eb6bd01eae26073c70b227fa4519af134b14dc9f008dfba32daba682b66f08",
+      "currentBlockHash": "000809f2dcf7303e2817713a04c3e7696d50e1deb2cdd3d2cda8d8ef6bacba7c",
+      "data": [
+        {
+          "amount": 3,
+          "sender": "0000",
+          "recipient": "http://localhost:5002",
+          "transactionId": "ce4b7fd2432a4d5c97bbc9d3ba7a1209"
+        }
+      ],
+      "nonce": 1272,
+      "difficulty": 3
+    },
+    {
+      "timestamp": 1717446751292,
+      "blockIndex": 4,
+      "previousBlockHash": "000809f2dcf7303e2817713a04c3e7696d50e1deb2cdd3d2cda8d8ef6bacba7c",
+      "currentBlockHash": "0000dafadbbe3e55a929435a6004b9f64ba5a799b4cd71ac5bc0891c9bb5a005",
+      "data": [
+        {
+          "amount": 3,
+          "sender": "0000",
+          "recipient": "http://localhost:5002",
+          "transactionId": "237444b8cb3c479d9aff56e288ec93da"
+        }
+      ],
+      "nonce": 30913,
+      "difficulty": 4
+    },
+    {
+      "timestamp": 1717446752280,
+      "blockIndex": 5,
+      "previousBlockHash": "0000dafadbbe3e55a929435a6004b9f64ba5a799b4cd71ac5bc0891c9bb5a005",
+      "currentBlockHash": "000344c21d6877c47bf3f0ecb86f1097c36fd40651ec046cd31bc15c41dfc920",
+      "data": [
+        {
+          "amount": 3,
+          "sender": "0000",
+          "recipient": "http://localhost:5002",
+          "transactionId": "72f4296daa494f8c9598f581aed83448"
+        }
+      ],
+      "nonce": 147,
+      "difficulty": 3
+    },
+    {
+      "timestamp": 1717446753087,
+      "blockIndex": 6,
+      "previousBlockHash": "000344c21d6877c47bf3f0ecb86f1097c36fd40651ec046cd31bc15c41dfc920",
+      "currentBlockHash": "0035e6221d7c5133bfdfc15b4abfbb96624b69202ce0db3d51f57e655a2d3d83",
+      "data": [
+        {
+          "amount": 3,
+          "sender": "0000",
+          "recipient": "http://localhost:5002",
+          "transactionId": "99f82339a0794fd8afb10248e74619a7"
+        }
+      ],
+      "nonce": 65,
+      "difficulty": 2
+    },
+    {
+      "timestamp": 1717446753662,
+      "blockIndex": 7,
+      "previousBlockHash": "0035e6221d7c5133bfdfc15b4abfbb96624b69202ce0db3d51f57e655a2d3d83",
+      "currentBlockHash": "094952a3b25903f85e7a5fc8d0fcba215087c7460b403220257ea317d79e63c9",
+      "data": [
+        {
+          "amount": 3,
+          "sender": "0000",
+          "recipient": "http://localhost:5002",
+          "transactionId": "a01a9b53b57440b890f79fe4f0c5dd92"
+        }
+      ],
+      "nonce": 8,
+      "difficulty": 1
+    },
+    {
+      "timestamp": 1717446785848,
+      "blockIndex": 8,
+      "previousBlockHash": "094952a3b25903f85e7a5fc8d0fcba215087c7460b403220257ea317d79e63c9",
+      "currentBlockHash": "008b4b7dd79a79710e7927b57ac918eae8524354f6bb1c3e00ef8128f607cbea",
+      "data": [
+        {
+          "amount": 3,
+          "sender": "0000",
+          "recipient": "http://localhost:5002",
+          "transactionId": "5e3bcfb298dc4425bc793baeb2738fba"
+        }
+      ],
+      "nonce": 23,
+      "difficulty": 2
+    },
+    {
+      "timestamp": 1717446989193,
+      "blockIndex": 9,
+      "previousBlockHash": "008b4b7dd79a79710e7927b57ac918eae8524354f6bb1c3e00ef8128f607cbea",
+      "currentBlockHash": "0002f94d057fc067b4691d6cf692624a627a76f3339107c6526a1c9a28cb07b7",
+      "data": [
+        {
+          "amount": 3,
+          "sender": "0000",
+          "recipient": "http://localhost:5002",
+          "transactionId": "80bb3cf1628c49b19640e5883fa2882c"
+        }
+      ],
+      "nonce": 4250,
+      "difficulty": 3
+    },
+    {
+      "timestamp": 1717446989747,
+      "blockIndex": 10,
+      "previousBlockHash": "0002f94d057fc067b4691d6cf692624a627a76f3339107c6526a1c9a28cb07b7",
+      "currentBlockHash": "00cae2c09440de3d79c29d4402523f896a185a2c060d39b553dee794ccab94e6",
+      "data": [
+        {
+          "amount": 3,
+          "sender": "0000",
+          "recipient": "http://localhost:5002",
+          "transactionId": "3e4feb54ac474ebc9627e63308674931"
+        }
+      ],
+      "nonce": 687,
+      "difficulty": 2
+    },
+    {
+      "timestamp": 1717446992172,
+      "blockIndex": 11,
+      "previousBlockHash": "00cae2c09440de3d79c29d4402523f896a185a2c060d39b553dee794ccab94e6",
+      "currentBlockHash": "000a271039af6c6dd7bc6b38795267938720e90beeef528c34a7298812028460",
+      "data": [
+        {
+          "amount": 3,
+          "sender": "0000",
+          "recipient": "http://localhost:5002",
+          "transactionId": "36c07be345434ccc8e2c6ee0b08c4ceb"
+        }
+      ],
+      "nonce": 2029,
+      "difficulty": 3
+    },
+    {
+      "timestamp": 1717447133711,
+      "blockIndex": 12,
+      "previousBlockHash": "000a271039af6c6dd7bc6b38795267938720e90beeef528c34a7298812028460",
+      "currentBlockHash": "0000f23029c8853fa44e90bbf312acafee9be51b5be42da7ce2baab3ed562422",
+      "data": [
+        {
+          "amount": 3,
+          "sender": "0000",
+          "recipient": "http://localhost:5002",
+          "transactionId": "8a8fb29d96f640288820085d9851fbb9"
+        }
+      ],
+      "nonce": 20698,
+      "difficulty": 4
+    },
+    {
+      "timestamp": 1717447517789,
+      "blockIndex": 13,
+      "previousBlockHash": "0000f23029c8853fa44e90bbf312acafee9be51b5be42da7ce2baab3ed562422",
+      "currentBlockHash": "000008401aa8facd7134bddce421756ef1ba73f3243fd57b764cc24253246ead",
+      "data": [
+        {
+          "amount": 3,
+          "sender": "0000",
+          "recipient": "http://localhost:5002",
+          "transactionId": "c0531dccfcba4ccbb02b850de9b3a5c0"
+        }
+      ],
+      "nonce": 517067,
+      "difficulty": 5
+    },
+    {
+      "timestamp": 1717447707084,
+      "blockIndex": 14,
+      "previousBlockHash": "000008401aa8facd7134bddce421756ef1ba73f3243fd57b764cc24253246ead",
+      "currentBlockHash": "000000a1d45944ae80aa282106a48cd1be8e6c1bc00e5f9012febeca328b5d76",
+      "data": [
+        {
+          "amount": 3,
+          "sender": "0000",
+          "recipient": "http://localhost:5002",
+          "transactionId": "b39b933836144b64895c18395448d2b9"
+        }
+      ],
+      "nonce": 5521537,
+      "difficulty": 6
     }
   ],
-  "memberNodes": []
+  "pendingTransactions": [],
+  "memberNodes": [],
+  "nodeUrl": "http://localhost:5002"
 }
