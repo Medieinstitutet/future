@@ -1,1 +1,44 @@
-{}
+{
+  "chain": [
+    {
+      "timestamp": 1717361010495,
+      "blockIndex": 1,
+      "previousBlockHash": "0",
+      "currentBlockHash": "0",
+      "data": [],
+      "nonce": 2048,
+      "difficulty": 1
+    }
+  ],
+  "pendingTransactions": [
+    {
+      "amount": 10,
+      "sender": "Joakim",
+      "recipient": "Elena",
+      "ticketID": "123",
+      "firstName": "el",
+      "lastName": "kj",
+      "email": "jkbhhvgghc",
+      "transactionId": "9d64282fd2c44f7a96d16a8cb35ba054"
+    },
+    {
+      "amount": 50,
+      "sender": "Joakim",
+      "recipient": "Elena",
+      "ticketID": "123",
+      "firstName": "ä-ö.l,mknjh",
+      "lastName": ",lmkhnj",
+      "email": "mklhnjbg"
+    },
+    {
+      "amount": 50,
+      "sender": "Joakim",
+      "recipient": "Elena",
+      "ticketID": "123",
+      "firstName": "ä-ö.l,mknjh",
+      "lastName": ",lmkhnj",
+      "email": "mklhnjbg"
+    }
+  ],
+  "memberNodes": []
+}

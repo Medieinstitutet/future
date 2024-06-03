@@ -1,9 +1,20 @@
-import { appendFileSync, readFileSync, writeFileSync } from 'fs';
+import { appendFileSync, readFileSync, writeFileSync, existsSync } from 'fs';
+
 import { join as joinPath } from 'path';
+
+// const __filename = fileURLToPath(import.meta.url);
+// const __dirname = dirname(__filename);
 
 class FileHandler {
   constructor(folder, filename) {
     this.pathname = joinPath(__appdir, folder, filename);
+    this.ensureFileExists();
+  }
+
+  ensureFileExists() {
+    if (!existsSync(this.pathname)) {
+      writeFileSync(this.pathname, JSON.stringify({}, null, 2));
+    }
   }
 
   append(data) {
@@ -17,23 +28,18 @@ class FileHandler {
   read(isJSON = false) {
     try {
       const data = readFileSync(this.pathname, 'utf8');
-
       if (isJSON) {
-        const jsonData = JSON.parse(data);
-        return jsonData.chain;
+        return JSON.parse(data);
       }
-
       return data;
     } catch (error) {
       throw error;
     }
   }
 
-  
   write(data) {
     try {
-      const jsonData = { chain: data };
-      writeFileSync(this.pathname, JSON.stringify(jsonData, null, 2), 'utf8');
+      writeFileSync(this.pathname, JSON.stringify(data, null, 2), 'utf8');
     } catch (error) {
       throw error;
     }
@@ -42,7 +48,7 @@ class FileHandler {
   appendJSON(data) {
     try {
       const existingData = this.read(true);
-      const newData = [...existingData, data];
+      const newData = { ...existingData, ...data };
       this.write(newData);
     } catch (error) {
       throw error;

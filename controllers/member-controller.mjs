@@ -19,7 +19,7 @@ export const registerNode = (req, res, next) => {
   ) {
     blockchain.memberNodes.push(node.nodeUrl);
 
-    syncMembers(node.nodeUrl);
+    // syncMembers(node.nodeUrl);
 
     res.status(201).json({
       success: true,
@@ -35,6 +35,6 @@ export const registerNode = (req, res, next) => {
   }
 };
 
-const syncMembers = (nodeUrl) => {
+// const syncMembers = (nodeUrl) => {
   
-};
+// };

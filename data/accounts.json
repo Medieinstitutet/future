@@ -1,35 +1,15 @@
 {
-  "chain": [
+  "accounts": [
     [
-      "rarara",
-      0
+      "Elena",
+      672
     ],
     [
-      "lalala",
-      200
+      "Joakim",
+      613
     ],
     [
-      "mamama",
-      0
-    ],
-    [
-      "haha",
-      50
-    ],
-    [
-      "lala",
-      20
-    ],
-    [
-      "meme",
-      80
-    ],
-    [
-      "uiuyi",
-      0
-    ],
-    [
-      "dsfds",
+      "Emanuel",
       0
     ]
   ]

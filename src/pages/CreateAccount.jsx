@@ -8,12 +8,8 @@ const CreateAccount = () => {
   const { response, error, loading, fetchData } = useAxios();
 
   const handleCreateAccount = async () => {
-    await fetchData(
-      'http://localhost:5001/api/v1/crypto/create-account',
-      'POST',
-      {},
-      { address }
-    );
+    await fetchData('http://localhost:5001/api/v1/crypto/create-account', 'POST', {}, { address });
+  setAddress('')
   };
 
   useEffect(() => {
@@ -34,6 +30,7 @@ const CreateAccount = () => {
           setAddress(e.target.value);
         }}
         placeholder="Enter address"
+        required
       />
       <button
         onClick={handleCreateAccount}

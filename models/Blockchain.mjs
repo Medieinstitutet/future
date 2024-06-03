@@ -7,16 +7,25 @@ export default class Blockchain {
   constructor() {
     this.fileHandler = new FileHandler('data', 'blockchain.json');
     const data = this.fileHandler.read(true);
-    if (data && data.length > 0) {
-      this.chain = data;
+    console.log('Loaded Blockchain Data:', data)
+    
+    if (data && Object.keys(data).length > 0 && data.chain && data.chain.length > 0) {
+      this.chain = data.chain;
+      this.pendingTransactions = data.pendingTransactions || [];
+      this.memberNodes = data.memberNodes || [];
+      this.nodeUrl = data.nodeUrl || process.argv[3];
     } else {
       this.chain = [];
-      this.memberNodes = [];
       this.pendingTransactions = [];
+      this.memberNodes = [];
       this.nodeUrl = process.argv[3];
-      this.cryptoCurrency = new CryptoCurrency('data', '../data/accounts.json');
-      this.createBlock(Date.now(), '0', '0', [], 2048, process.env.DIFFICULTY);
+      this.createGenesisBlock();
     }
+    this.cryptoCurrency = new CryptoCurrency('data', 'accounts.json');
+    console.log('Blockchain Initialized:', this);
+  }
+  createGenesisBlock() {
+    this.createBlock(Date.now(), '0', '0', [], 2048, 1);
   }
 
   createBlock(
@@ -39,21 +48,33 @@ export default class Blockchain {
 
     this.pendingTransactions = [];
     this.chain.push(block);
-
+    this.saveBlockchain();
     return block;
+
   }
 
-  createTransaction(amount, sender, recipient) {
-    return new Transaction(amount, sender, recipient);
+  createTransaction(amount, sender, recipient, ticketID, firstName, lastName, email) {
+    return new Transaction(amount, sender, recipient, ticketID, firstName, lastName, email);
   }
 
   addTransaction(transaction) {
     this.pendingTransactions.push(transaction);
+    this.cryptoCurrency.transferFunds(transaction.sender, transaction.recipient, transaction.amount); 
+    this.saveBlockchain();
     return this.getLastBlock().blockIndex + 1;
   }
 
   getLastBlock() {
     return this.chain.at(-1);
+  }
+  saveBlockchain() {
+    const data = {
+      chain: this.chain,
+      pendingTransactions: this.pendingTransactions,
+      memberNodes: this.memberNodes,
+      nodeUrl: this.nodeUrl
+    };
+    this.fileHandler.write(data);
   }
 
   hashBlock(timestamp, previousBlockHash, currentBlockData, nonce, difficulty) {

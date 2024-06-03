@@ -1,7 +1,7 @@
 // Layout.jsx
 import { Outlet } from 'react-router-dom';
 import { Navbar } from '../components/Navbar';
-
+import '../styles/layout.scss'
 const Layout = () => {
   return (
     <>
@@ -9,7 +9,9 @@ const Layout = () => {
         <Navbar />
       </header>
       <main>
+      <div className="main-container">
         <Outlet />
+        </div>
       </main>
     </>
   );
