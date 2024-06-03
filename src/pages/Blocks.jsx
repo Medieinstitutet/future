@@ -6,11 +6,11 @@ const Blockchain = () => {
   const [blocks, setBlocks] = useState([]);
 
   const handleFetchBlockchain = async () => {
-    await fetchData('http://localhost:5001/api/v1/blockchain', 'GET');
+    await fetchData('http://localhost:5002/api/v1/blockchain', 'GET');
   };
 
   const handleMineBlock = async () => {
-    await fetchData('http://localhost:5001/api/v1/blockchain/mine', 'POST', {});
+    await fetchData('http://localhost:5002/api/v1/blockchain/mine', 'GET', {});
   };
 
   React.useEffect(() => {
